@@ -76,3 +76,5 @@ group :development do
 end
 # sécuriser les codes et clés d'API
 gem "dotenv-rails"
+# système de signin signup
+gem "devise"

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Nouveau participant à ton évènement <%= @event.title %> ! 💃🕺</h1>
+  <p>
+    C'est génial ! Quelques infos sur ce nouveau participant :
+  </p>
+  <ul>
+    <li>Prénom : <%= @participant.first_name %></li>
+    <li>Nom : <%= @participant.last_name %></li>
+    <li>Email : <%= @participant.email %></li>
+  </ul>
+  <p>
+    À très vite sur www.bdx-event.com !
+  </p>
+</body>
+</html>
