@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Salut <%= @user.first_name %> et bienvenue chez BDX-EVENT ! 💃🕺</h1>
+  <p>
+    Tu t'es inscrit sur bdx-event en utilisant l'e-mail suivant : <%= @user.email %>.<br><br>
+    Pour accéder à ton espace client et participer à pleins d'évènements de folie, connecte-toi via : <%= @url %>.<br><br>
+    À très vite sur www.bdx-event.com !
+  </p>
+</body>
+</html>

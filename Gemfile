@@ -74,3 +74,5 @@ group :development do
   # tester l'envoi d'emails
   gem "letter_opener"
 end
+# sécuriser les codes et clés d'API
+gem "dotenv-rails"
