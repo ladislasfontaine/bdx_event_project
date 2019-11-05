@@ -3,9 +3,9 @@ class UserMailer < ApplicationMailer
 
   def welcome_email(user)
     @user = user
-    @url = 'http://bdx-event.com/login'
+    @url = 'http://bdx-event.com/users/sign_in'
 
-    mail(to: @user.email, subject: 'Bienvenue chez BDX EVENT ! 🤙')
+    mail(to: @user.email, subject: 'Bienvenue chez BdxEvent ! 🤙')
   end
 
   def new_participant(attendance)
