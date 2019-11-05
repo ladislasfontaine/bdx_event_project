@@ -16,7 +16,7 @@ body {
   height: 70vh;
   top: 0;
   left: 0;
-  /* background-image: url("background.jpg"); */
+  background-image: url("background.jpg");
   background-size: 100%;
   background-position: center;
   z-index: -1;

@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
   include UsersHelper
   
-  before_action :authenticate_user!, except: [:index]
-  before_action :match_current_user, except: [:index]
+  before_action :authenticate_user! #, except: [:index]
+  before_action :match_current_user #, except: [:index]
 
-  def index
-    redirect_to root_path  
-  end
+  # def index
+  #   redirect_to root_path  
+  # end
 
   def show
     @user = User.find(params[:id])
