@@ -3,8 +3,18 @@
 
 <ul>
   <li><%= @user.first_name %></li>
+  <li><%= @user.last_name %></li>
   <li><%= @user.email %></li>
+  <li><%= @user.description %></li>
 </ul>
 
-
 <%= link_to 'Modifier email ou mot de passe', edit_user_registration_path %>
+
+<hr>
+
+<% @user.events.each do |event| %>
+  <div class="event-element">
+    <%= event.title %>
+    <%= link_to 'Voir', event_path(event.id) %>
+  </div>
+<% end %>

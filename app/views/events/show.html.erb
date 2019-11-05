@@ -1,5 +1,35 @@
-
+<div><%= @event.start_date %></div>
 
 <h2><%= @event.title %></h2>
 
-<p>Par <%= @event.user %></p>
+<p>Par <%= @creator.first_name %> <%= @creator.last_name %></p>
+<p><%= @event.price %> €</p>
+
+<div>
+  <div class="event">
+    <div class="left-col">
+      <h4>Description</h4>
+      <%= @event.description %>
+    </div>
+    <div class="right-col">
+      <div class="date">
+        <h4>Date Et Heure</h4>
+        <%= @event.start_date %>
+      </div>
+      <div class="location">
+        <h4>Adresse</h4>
+        <%= @event.location %>
+      </div>
+      <div class="refund">
+        <h4>Politique De Remboursement</h4>
+        Remboursements jusqu'à 1 jour avant l'événement.
+        Les frais d'Eventbrite ne sont pas remboursables.
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="event-creator">
+    <div><%= @creator.first_name %> <%= @creator.last_name %></div>
+    <div><%= @creator.description %></div>
+  </div>
+</div>
