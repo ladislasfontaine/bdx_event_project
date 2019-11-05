@@ -1,24 +1,35 @@
-# README
+<h1>Bdx Event Project 💻</h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Bdx Event est un clone de Eventbrite à Bordeaux (en cours).
 
-Things you may want to cover:
+* Ruby version 2.5.1
+* Rails version 5.2.3
+* `bundle install`
+* `rails db:create`
+* `rails db:migrate`
+* `rails db:seed`
+* `rails server`
+* en local : `http://localhost:3000/`
+* en production : `https://bdx-event.herokuapp.com/`
 
-* Ruby version
+<h2>Tables</h2>
 
-* System dependencies
+Les différentes tables : 
+* `users` : tous nos utilisateurs, qui peuvent être des créateurs d'évènements et des participants également
+* `events` : les évènements, qui sont créés par un utilisateur avec des attributs classiques comme date de début, lieu, prix, titre, description
+* `attendances` : table qui fait le lien entre les utilisateurs et les évènements créés, il y a un nouvel objet `Attendance` créé pour chaque nouveau participant à un évènement
 
-* Configuration
+<h2>Architecture</h2>
 
-* Database creation
+![Architecture Base de données](app/assets/images/db.png)
 
-* Database initialization
+<h2>Améliorations possibles</h2>
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
+* Design
+* système de tags pour les évènements
+* pouvoir classer les évènements affichés sur index par tags
 * ...
+
+--------
+
+Fait par [Ladislas](https://github.com/ladislasfontaine) 🤙 en utilisant les ressources de [The Hacking Project](https://www.thehackingproject.org)
