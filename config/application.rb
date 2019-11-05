@@ -16,6 +16,7 @@ module BdxEvent
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+    # ligne ajoutée pour accès aux images en production
     config.serve_static_assets = true
   end
 end
