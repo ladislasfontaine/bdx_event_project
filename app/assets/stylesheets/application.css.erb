@@ -145,6 +145,27 @@ header a, header a:hover, header a:active {
   margin-top: 180px;
 }
 
+/* FOOTER */
+
+footer {
+  height: 30vh;
+  margin-top: 50px;
+  color: #6F7287;
+  position: relative;
+  border-top: #4B4D63 solid 6px;
+  background: #1E0A3C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* CARDS */
+
 .card {
   border-radius: 0;
   transition-property: box-shadow;
@@ -185,3 +206,88 @@ header a, header a:hover, header a:active {
   line-height: 1.25rem;
   font-weight: 400;
 }
+
+/* FORMS */
+
+form {
+  width: 690px;
+  margin: 50px auto;
+}
+
+.form-check {
+  padding: 0;
+}
+
+.form-control {
+  height: 48px;
+  border-radius: 3px;
+  padding: 9px 12px;
+  border: 1px #DBDAE3 solid;
+  background: #FFF;
+  color: #39364F;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: .5px;
+}
+.form-control:focus {
+  border: 2px solid #3659E3;
+  outline: 0;
+  padding: 8px 11px;
+  box-shadow: none;
+}
+.form-check {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-checkbox {
+  margin: 20px 0;
+}
+
+.form-pwd {
+  letter-spacing: 4px;
+}
+
+/* BUTTONS */
+
+.btn {
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  font-weight: 600;
+  height: 44px !important;
+  padding: 0 30px;
+  border: 2px solid;
+  border-radius: 4px;
+  font-size: 13px;
+}
+.btn-primary, .btn-primary:active, .btn-primary:focus {
+  border-color: #d1410c;
+  background-color: #d1410c;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #f05537;
+  border-color: #f05537;
+}
+.btn-secondary {
+  border-color: #a9a8b3;
+  background: #fff;
+}
+.btn-secondary a, .btn-secondary a:hover, .btn-secondary a:focus, .btn-secondary a:active {
+  margin-top: 20px !important;
+  vertical-align: midddle;
+  color: #39364f;
+  text-decoration: none;
+}
+.btn-secondary:active, .btn-secondary:focus {
+  background-color: #eeedf2;
+  border-color: #a9a8b3;
+  background: #fff;
+}
+.btn-secondary:hover {
+  border-color: #6f7287;
+  background: #fff;
+}
+

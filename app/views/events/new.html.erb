@@ -1,41 +1,40 @@
-<div class="card text-center mx-auto my-2" style="max-width: 50rem;">
-  <div class="card-header text-muted">
-    <%= DateTime.now.strftime("%A, %d %b %Y %l:%M %p") %>
-  </div>
-  <div class="card-body">
-    <%= form_tag events_path, method: "post", class: "form-group" do %>
+<div class="headline">Crée un évènement</div>
 
-      <div class="form-group form-check">
-        <%= label_tag 'Titre' %>
-        <%= text_field_tag 'title', nil, class: "form-control" %>
-      </div>
+<div>
+  <%= form_tag events_path, method: "post", class: "form-group" do %>
 
-      <div class="form-group form-check">
-        <%= label_tag 'Adresse' %>
-        <%= text_field_tag 'location', nil, class: "form-control" %>
-      </div>
+    <div class="form-group form-check">
+      <%= label_tag 'Titre' %>
+      <%= text_field_tag 'title', nil, class: "form-control" %>
+    </div>
 
-      <div class="form-group form-check">
-        <%= label_tag 'Date et Heure' %>
-        <%= text_field_tag 'start_date', nil, class: "form-control" %>
-      </div>
+    <div class="form-group form-check">
+      <%= label_tag 'Adresse' %>
+      <%= text_field_tag 'location', nil, class: "form-control" %>
+    </div>
 
-      <div class="form-group form-check">
-        <%= label_tag 'Durée (en minutes)' %>
-        <%= text_field_tag 'duration', nil, class: "form-control" %>
-      </div>
+    <div class="form-group form-check">
+      <%= label_tag 'Date et Heure' %>
+      <%= text_field_tag 'start_date', nil, class: "form-control" %>
+    </div>
 
-      <div class="form-group form-check">
-        <%= label_tag 'Description' %>
-        <%= text_field_tag 'description', nil, class: "form-control" %>
-      </div>
+    <div class="form-group form-check">
+      <%= label_tag 'Durée (en minutes)' %>
+      <%= text_field_tag 'duration', nil, class: "form-control" %>
+    </div>
 
-      <div class="form-group form-check">
-        <%= label_tag 'Prix (en €)' %>
-        <%= text_field_tag 'price', nil, class: "form-control" %>
-      </div>
+    <div class="form-group form-check">
+      <%= label_tag 'Description' %>
+      <%= text_field_tag 'description', nil, class: "form-control" %>
+    </div>
 
-      <%= submit_tag "Créer ✅", class: "btn btn-primary" %><br>
-    <% end %>
-  </div>
+    <div class="form-group form-check">
+      <%= label_tag 'Prix (en €)' %>
+      <%= text_field_tag 'price', nil, class: "form-control" %>
+    </div>
+
+    <%= submit_tag "Publier", class: "btn btn-primary" %>
+    <button type="button" class="btn btn-secondary"><%= link_to 'Retour', root_path %></button>
+    
+  <% end %>
 </div>
