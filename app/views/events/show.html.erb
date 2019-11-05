@@ -4,6 +4,8 @@
 
 <p>Par <%= @creator.first_name %> <%= @creator.last_name %></p>
 <p><%= @event.price %> €</p>
+<p><%= @event.attendances.count %> personnes inscrites pour le moment !</p>
+<div class="btn btn-secondary"><%= link_to 'Participer', event_path(@event.id) %></div>
 
 <div>
   <div class="event">
@@ -14,7 +16,8 @@
     <div class="right-col">
       <div class="date">
         <h4>Date Et Heure</h4>
-        <%= @event.start_date %>
+        <%= @event.start_date %><br>
+        <%= @event.end_date %>
       </div>
       <div class="location">
         <h4>Adresse</h4>

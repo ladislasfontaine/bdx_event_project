@@ -8,7 +8,8 @@
   <li><%= @user.description %></li>
 </ul>
 
-<%= link_to 'Modifier email ou mot de passe', edit_user_registration_path %>
+<%= link_to 'Modifier email ou mot de passe', edit_user_registration_path %><br>
+<%= link_to 'Modifier mes informations', edit_user_path(@user.id) %>
 
 <hr>
 

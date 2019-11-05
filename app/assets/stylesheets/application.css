@@ -1,15 +1,157 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Neue Plak,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  background: rgba(211, 211, 211, 0.1);
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 70vh;
+  top: 0;
+  left: 0;
+  background-image: url("background.jpg");
+  background-size: 100%;
+  background-position: center;
+  z-index: -1;
+}
+
+.background::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 70vh;
+  top: 0;
+  left: 0;
+  background: black;
+  opacity: 0.3;
+}
+
+.navbar-brand {
+  padding: 0 30px;
+  color: #fff !important;
+  font-weight: 800 !important;
+}
+
+.navbar {
+  height: 72px;
+  padding: 0 !important;
+  font-weight: 600;
+  font-size: 13px;
+  justify-content: space-between;
+}
+
+header a, header a:hover, header a:active {
+  color: #fff;
+}
+
+.header-right {
+  display: flex;
+  height: 72px;
+}
+
+.header-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10px;
+  position: relative;
+  right: 0;
+}
+
+.header-element:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.flash {
+  position: absolute;
+  top: 72px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 20px 0;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+}
+
+.headline {
+  position: absolute;
+  color: #fff;
+  top: 200px;
+  left: 20%;
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.headline span {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.index-title {
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: .5px;
+  line-height: 40px;
+  margin-bottom: 40px;
+}
+
+.index-title span {
+  color: #3d64ff;
+  border-bottom: solid 2px lightgray;
+  margin: 20px 0 !important;
+}
+
+.page-content {
+  width: 90%;
+  margin: auto;
+  margin-top: 65vh;
+}
+
+.card {
+  border-radius: 0;
+  transition-property: box-shadow;
+  transition-duration: 0.5s;
+  margin-bottom: 30px;
+  border: none;
+}
+.card-img-top {
+  border-radius: 0;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1)
+}
+
+.card-body {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.card-date {
+  color: #d1410c;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+.card-title a {
+  font-weight: 700;
+  color: #39364f;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+.card-title a:hover {
+  text-decoration: none;
+}
+.card-location {
+  color: #6f7287;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}

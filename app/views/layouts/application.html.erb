@@ -13,28 +13,28 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light">
         <%= link_to 'BdxEvent', root_path, class: "navbar-brand" %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <%= link_to 'Créer un évènement', root_path, class: "nav-item nav-link" %>
-            <% if user_signed_in? %>
-              <%= link_to 'Bonjour ' + current_user.first_name.to_s, user_path(current_user.id), class: "nav-item nav-link" %>
-              <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "nav-item nav-link" %>
-            <% else %>
-              <%= link_to 'Se connecter', new_user_session_path, class: "nav-item nav-link" %>
-              <%= link_to "S'inscrire", new_user_registration_path, class: "nav-item nav-link" %>
-            <% end %>
-          </ul>
+        <div class="header-right">
+          <div class="header-element"><%= link_to 'Créer un évènement', new_event_path, class: "nav-item nav-link" %></div>
+          <% if user_signed_in? %>
+            <div class="header-element"><%= link_to 'Bonjour ' + current_user.first_name.to_s, user_path(current_user.id), class: "nav-item nav-link" %></div>
+            <div class="header-element"><%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "nav-item nav-link" %></div>
+          <% else %>
+            <div class="header-element"><%= link_to 'Se connecter', new_user_session_path, class: "nav-item nav-link" %></div>
+            <div class="header-element"><%= link_to "S'inscrire", new_user_registration_path, class: "nav-item nav-link" %></div>
+          <% end %>
         </div>
+        
       </nav>
     </header>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice != nil || alert != nil %>
+      <div class="flash"><%= notice %><%= alert %></div>      
+    <% end %>
 
     <%= yield %>
   </body>

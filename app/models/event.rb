@@ -11,6 +11,11 @@ class Event < ApplicationRecord
   validate :future_event
   validate :multiple_of_five
 
+  def end_date
+    # date de fin c'est la date de début + la durée en minutes
+    self.start_date + (60 * self.duration)
+  end
+
   private
 
   def future_event

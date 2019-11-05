@@ -1,0 +1,26 @@
+<div class="card text-center mx-auto my-2" style="max-width: 50rem;">
+  <div class="card-header text-muted">
+    <%= DateTime.now.strftime("%A, %d %b %Y %l:%M %p") %>
+  </div>
+  <div class="card-body">
+    <%= form_tag user_path(@user.id), method: "patch", class: "form-group" do %>
+
+      <div class="form-group form-check">
+        <%= label_tag 'Prénom' %>
+        <%= text_field_tag 'first_name', @user.first_name, class: "form-control" %>
+      </div>
+
+      <div class="form-group form-check">
+        <%= label_tag 'Nom' %>
+        <%= text_field_tag 'last_name', @user.last_name, class: "form-control" %>
+      </div>
+
+      <div class="form-group form-check">
+        <%= label_tag 'Description' %>
+        <%= text_field_tag 'description', @user.description, class: "form-control" %>
+      </div>
+
+      <%= submit_tag "Modifier ✅", class: "btn btn-primary" %><br>
+    <% end %>
+  </div>
+</div>

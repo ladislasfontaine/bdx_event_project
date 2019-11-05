@@ -1,23 +1,23 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+<div class="background"></div>
+<div class="headline"><span>Made for</span><br> those who do</div>
 
-<p>Événements populaires : <span>Bordeaux</span></p>
+<div class="page-content">
+  <div class="index-title">Popular in <span>Bordeaux</span></div>
 
-<div class="section">
-  <div class="d-flex flex-wrap justify-content-around mx-auto" style="width: 90%;">
-    <% @events.each do |event| %>
-      <div class="card m-2" style="width: 18rem;">
-        <%= image_tag 'covers/cover1.png', alt: "Couverture évènement", class: "card-img-top" %>
-        <div class="card-body">
-
-          <h5 class="card-title">
-            <%= link_to event.title, event_path(event.id) %>
-          </h5>
-          <p class="card-text"><%= event.location %></p>
+  <div class="section">
+    <div class="d-flex flex-wrap justify-content-between mx-auto">
+      <% @events.each do |event| %>
+        <div class="card" style="width: 18rem;">
+          <%= image_tag 'covers/cover' + rand(1..10).to_s + '.jpeg', alt: "Couverture évènement", class: "card-img-top" %>
+          <div class="card-body">
+            <div class="card-date"><%= event.start_date.strftime("%a, %b %d") %></div>
+            <h5 class="card-title"><%= link_to event.title, event_path(event.id) %></h5>
+            <div class="card-location"><%= event.location %></div>
+          </div>
         </div>
-        <div class="price"><%= event.price %> €</div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
+
 
