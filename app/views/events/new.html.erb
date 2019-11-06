@@ -15,7 +15,10 @@
 
     <div class="form-group form-check">
       <%= label_tag 'Date et Heure' %>
-      <%= text_field_tag 'start_date', nil, class: "form-control" %>
+      <div class="date-input">
+        <%= date_field_tag 'start_date', nil, class: "form-control form-date" %>
+        <%= time_field_tag 'start_time', nil, class: "form-control form-date" %>
+      </div>
     </div>
 
     <div class="form-group form-check">
