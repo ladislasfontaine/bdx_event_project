@@ -19,13 +19,13 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="header-right">
-          <div class="header-element"><%= link_to 'Créer un évènement', new_event_path, class: "nav-item nav-link" %></div>
+          <button class="header-element"><%= link_to 'Créer un évènement', new_event_path, class: "nav-item nav-link" %></button>
           <% if user_signed_in? %>
-            <div class="header-element"><%= link_to 'Bonjour ' + current_user.first_name.to_s, user_path(current_user.id), class: "nav-item nav-link" %></div>
-            <div class="header-element"><%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "nav-item nav-link" %></div>
+            <button class="header-element"><%= link_to 'Bonjour ' + current_user.first_name.to_s, user_path(current_user.id), class: "nav-item nav-link" %></button>
+            <button class="header-element"><%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "nav-item nav-link" %></button>
           <% else %>
-            <div class="header-element"><%= link_to 'Se connecter', new_user_session_path, class: "nav-item nav-link" %></div>
-            <div class="header-element"><%= link_to "S'inscrire", new_user_registration_path, class: "nav-item nav-link" %></div>
+            <button class="header-element"><%= link_to 'Se connecter', new_user_session_path, class: "nav-item nav-link" %></button>
+            <button class="header-element"><%= link_to "S'inscrire", new_user_registration_path, class: "nav-item nav-link" %></button>
           <% end %>
         </div>
         
