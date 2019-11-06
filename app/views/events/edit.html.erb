@@ -1,0 +1,44 @@
+<div class="headline">Édite ton évènement</div>
+
+<div>
+  <%= form_tag event_path(params[:id]), method: "put", class: "form-group" do %>
+
+    <div class="form-group form-check">
+      <%= label_tag 'Titre' %>
+      <%= text_field_tag 'title', @event.title, class: "form-control" %>
+    </div>
+
+    <div class="form-group form-check">
+      <%= label_tag 'Adresse' %>
+      <%= text_field_tag 'location', @event.location, class: "form-control" %>
+    </div>
+
+    <div class="form-group form-check">
+      <%= label_tag 'Date et Heure' %>
+      <div class="date-input">
+        <%= datetime_field_tag 'start_date', @event.start_date.strftime("%Y-%m-%dT%H:%M"), class: "form-control form-date" %>
+        <%#= time_field_tag 'start_time', nil, class: "form-control form-date" %>
+      </div>
+    </div>
+
+    <div class="form-group form-check">
+      <%= label_tag 'Durée (en minutes)' %>
+      <%= text_field_tag 'duration', @event.duration, class: "form-control" %>
+    </div>
+
+    <div class="form-group form-check">
+      <%= label_tag 'Description' %>
+      <%= text_area_tag 'description', @event.description, rows: 3, class: "form-control" %>
+    </div>
+
+    <div class="form-group form-check">
+      <%= label_tag 'Prix (en €)' %>
+      <%= text_field_tag 'price', @event.price, class: "form-control" %>
+    </div>
+
+    <%= submit_tag "Modifier", class: "btn btn-primary" %>
+    <button type="button" class="btn btn-secondary"><%= link_to 'Retour', :back %></button>
+    <button type="button" class="btn btn-secondary"><a href="<%= event_path(params[:id]) %>" data-confirm="C'est ton dernier mot ?" data-method="DELETE">Supprimer</a></button>
+    
+  <% end %>
+</div>

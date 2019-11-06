@@ -1,0 +1,22 @@
+<h2>Participants</h2>
+
+<table style="width:100%">
+  <tr>
+    <th>Prénom</th>
+    <th>Nom</th>
+    <th>Email</th>
+    <th>Description</th>
+  </tr>
+  <% @participants.each do |participant| %>
+    <tr>
+      <th><%= participant.first_name %></th>
+      <th><%= participant.last_name %></th>
+      <th><%= participant.email %></th>
+      <th><%= participant.description %></th>
+    </tr>
+  <% end %>
+</table>
+
+
+<button class="btn btn-secondary"><%= link_to "Éditer mon évènement", edit_event_path(params[:event_id]) %></button>
+

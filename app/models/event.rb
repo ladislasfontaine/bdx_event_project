@@ -7,13 +7,17 @@ class Event < ApplicationRecord
   validates :duration, numericality: { only_integer: true, greater_than: 0 }
   validates :title, length: { in: 5..140 }
   validates :description, length: { in: 20..1000 }
-  validates :price, numericality: { only_integer: true, greater_than: 0, less_than: 1001 }
+  validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than: 1001 }
   validate :future_event
   validate :multiple_of_five
 
   def end_date
     # date de fin c'est la date de début + la durée en minutes
     self.start_date + (60 * self.duration)
+  end
+
+  def is_free?
+    self.price == 0 ? true : false
   end
 
   private

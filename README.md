@@ -25,7 +25,9 @@ Les différentes tables :
 
 <h2>Améliorations possibles</h2>
 
-* Design
+* restrictions à faire
+* mettre heroku en production
+* design
 * système de tags pour les évènements
 * pouvoir classer les évènements affichés sur index par tags
 * ...

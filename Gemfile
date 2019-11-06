@@ -78,3 +78,4 @@ end
 gem "dotenv-rails"
 # système de signin signup
 gem "devise"
+gem "stripe"

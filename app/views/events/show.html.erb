@@ -4,12 +4,30 @@
     <div class="card-date"><%= @event.start_date.strftime("%a, %b %d") %></div>
     <h2><%= @event.title %></h2>
     <p>Par <%= @creator.first_name %> <%= @creator.last_name %></p>
-    <p><%= @event.price %> €</p>
+    <p>
+    <% if @event.is_free? %>
+      Gratuit
+    <% else %>
+      <%= @event.price %> €    
+    <% end %>
+    </p>
     <p><%= @event.attendances.count %> personnes inscrites</p>
   </div>
 
   <div class="button-space">
-    <button type="button" class="btn btn-inscription"><%= link_to "S'inscrire", root_path %></button>
+    <button type="button" class="btn btn-inscription">
+      <% if current_user == @creator %>
+        <%= link_to "Mon espace évènement", event_participations_path(params[:id]) %>
+      <% elsif @event.users.include?(current_user) %>
+        <%= link_to "Déjà inscrit(e)", event_path(params[:id]) %>        
+      <% else %>
+        <% if @event.is_free? %>
+          <%= link_to "S'inscrire", event_participations_path(params[:id]), method: 'post' %>
+        <% else %>
+          <%= link_to "S'inscrire", new_event_participation_path(params[:id]) %>                
+        <% end %>
+      <% end %>
+    </button>
   </div>
 
   <div class="description">
@@ -19,8 +37,8 @@
   <div class="details-right-col">
     <div class="date">
       <h4>Date Et Heure</h4>
-      <%= @event.start_date %><br>
-      <%= @event.end_date %>
+      Début le <%= @event.start_date.strftime("%d-%m-%Y à %H:%M") %><br>
+      Fin le <%= @event.end_date.strftime("%d-%m-%Y à %H:%M") %>
     </div>
     <div class="location">
       <h4>Adresse</h4>
