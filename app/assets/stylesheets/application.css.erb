@@ -256,7 +256,7 @@ form {
   vertical-align: middle;
   text-decoration: none;
   font-weight: 600;
-  height: 44px !important;
+  height: 44px;
   padding: 0 30px;
   border: 2px solid;
   border-radius: 4px;
@@ -291,3 +291,93 @@ form {
   background: #fff;
 }
 
+/* EVENT PAGE */
+
+.event-main {
+  display: grid;
+  max-width: 1080px;
+  margin: 50px auto;
+  background: white;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 66px 360px auto;
+}
+
+.head-img {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+}
+.head-infos {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  padding: 40px;
+  border-bottom: 1px solid lightgray;
+}
+
+.button-space {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-inscription {
+  font-weight: 600;
+  color: #FFF;
+  background-color: #0D8547;
+  border: #0D8547;
+  justify-self: stretch;
+  width: 320px;
+}
+.btn-inscription a, .btn-inscription a:hover, .btn-inscription a:focus, .btn-inscription a:active {
+  color: #fff;
+  text-decoration: none;
+}
+.btn-inscription:hover {
+  background-color: #179C55;
+}
+
+.description {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  padding: 40px;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+
+.details-right-col {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  padding: 40px;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+
+.creator-details {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.creator-details span {
+  font-weight: 700;
+  font-size: 13px;
+  color: #1E0A3C;
+}

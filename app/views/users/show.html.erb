@@ -1,21 +1,25 @@
-<h1>Profil</h1>
-<p>Mes informations :</p>
+<div class="headline">Ton profil</div>
 
-<ul>
-  <li><%= @user.first_name %></li>
-  <li><%= @user.last_name %></li>
-  <li><%= @user.email %></li>
-  <li><%= @user.description %></li>
-</ul>
+<div style="padding: 60px;">
+  <h2>Mes informations :</h2>
 
-<%= link_to 'Modifier email ou mot de passe', edit_user_registration_path %><br>
-<%= link_to 'Modifier mes informations', edit_user_path(@user.id) %>
+  <ul>
+    <li>Prénom : <%= @user.first_name %></li>
+    <li>Nom : <%= @user.last_name %></li>
+    <li>Email : <%= @user.email %></li>
+    <li>Description : <%= @user.description %></li>
+  </ul>
 
-<hr>
+  <%= link_to 'Modifier email ou mot de passe', edit_user_registration_path %><br>
+  <%= link_to 'Modifier mes informations', edit_user_path(@user.id) %>
 
-<% @user.events.each do |event| %>
-  <div class="event-element">
-    <%= event.title %>
-    <%= link_to 'Voir', event_path(event.id) %>
-  </div>
-<% end %>
+  <hr>
+  <h2>Mes évènements :</h2>
+  <% @user.events.each do |event| %>
+    <div class="event-element">
+      <%= event.title %>
+      <%= link_to 'Voir', event_path(event.id) %>
+    </div>
+  <% end %>
+</div>
+

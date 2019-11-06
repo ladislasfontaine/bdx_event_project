@@ -1,37 +1,40 @@
-<div><%= @event.start_date %></div>
+<div class="event-main">
+  <div class="head-img">Image</div>
+  <div class="head-infos">
+    <div class="card-date"><%= @event.start_date.strftime("%a, %b %d") %></div>
+    <h2><%= @event.title %></h2>
+    <p>Par <%= @creator.first_name %> <%= @creator.last_name %></p>
+    <p><%= @event.price %> €</p>
+    <p><%= @event.attendances.count %> personnes inscrites</p>
+  </div>
 
-<h2><%= @event.title %></h2>
+  <div class="button-space">
+    <button type="button" class="btn btn-inscription"><%= link_to "S'inscrire", root_path %></button>
+  </div>
 
-<p>Par <%= @creator.first_name %> <%= @creator.last_name %></p>
-<p><%= @event.price %> €</p>
-<p><%= @event.attendances.count %> personnes inscrites pour le moment !</p>
-<div class="btn btn-secondary"><%= link_to 'Participer', event_path(@event.id) %></div>
-
-<div>
-  <div class="event">
-    <div class="left-col">
-      <h4>Description</h4>
-      <%= @event.description %>
+  <div class="description">
+    <h4>Description</h4>
+    <%= @event.description %>
+  </div>
+  <div class="details-right-col">
+    <div class="date">
+      <h4>Date Et Heure</h4>
+      <%= @event.start_date %><br>
+      <%= @event.end_date %>
     </div>
-    <div class="right-col">
-      <div class="date">
-        <h4>Date Et Heure</h4>
-        <%= @event.start_date %><br>
-        <%= @event.end_date %>
-      </div>
-      <div class="location">
-        <h4>Adresse</h4>
-        <%= @event.location %>
-      </div>
-      <div class="refund">
-        <h4>Politique De Remboursement</h4>
-        Remboursements jusqu'à 1 jour avant l'événement.
-        Les frais d'Eventbrite ne sont pas remboursables.
-      </div>
+    <div class="location">
+      <h4>Adresse</h4>
+      <%= @event.location %>
+    </div>
+    <div class="refund">
+      <h4>Politique De Remboursement</h4>
+      Remboursements jusqu'à 1 jour avant l'événement.
+      Les frais d'Eventbrite ne sont pas remboursables.
     </div>
   </div>
-  <hr>
-  <div class="event-creator">
+
+  <div class="creator-details">
+    <span>Créé par</span>
     <div><%= @creator.first_name %> <%= @creator.last_name %></div>
     <div><%= @creator.description %></div>
   </div>

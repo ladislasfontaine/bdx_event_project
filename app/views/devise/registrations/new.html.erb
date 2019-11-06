@@ -22,7 +22,7 @@
   </div>
 
   <%= f.submit "S'inscrire", class: "btn btn-primary" %>
-  <button type="button" class="btn btn-secondary"><%= link_to 'Retour', root_path %></button>
+  <button type="button" class="btn btn-secondary"><%= link_to 'Retour', :back %></button>
   Déjà un compte ? <%= render "devise/shared/links" %>
 
 <% end %>
