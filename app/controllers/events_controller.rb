@@ -34,8 +34,9 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-    if params[:cover].nil?
-      @event.cover.attach(params[:cover])      
+    if !params[:cover].nil?
+      @event.cover.purge
+      @event.cover.attach(params[:cover])    
     end
     if @event.update(title: params[:title], location: params[:location], start_date: params[:start_date], duration: params[:duration].to_i, description: params[:description], price: params[:price].to_i, user: current_user)
       flash[:notice] = "Ton évènement a bien été modifié."
