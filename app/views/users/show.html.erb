@@ -1,25 +1,59 @@
 <div class="headline">Ton profil</div>
+<div class="profile-page">
+  <h2>Mes informations</h2>
 
-<div style="padding: 60px;">
-  <h2>Mes informations :</h2>
+  <table>
+    <tr>
+      <th>Prénom</th>
+      <th>Nom</th>
+      <th>Email</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td><%= @user.first_name %></td>
+      <td><%= @user.last_name %></td>
+      <td><%= @user.email %></td>
+      <td><%= @user.description %></td>
+    </tr>
+  </table>
 
-  <ul>
-    <li>Prénom : <%= @user.first_name %></li>
-    <li>Nom : <%= @user.last_name %></li>
-    <li>Email : <%= @user.email %></li>
-    <li>Description : <%= @user.description %></li>
-  </ul>
+  <div class="d-flex justify-content-center">
+    <button class="btn btn-secondary" style="margin-right: 20px;"><%= link_to 'Modifier email ou mot de passe', edit_user_registration_path %></button>
+    <button class="btn btn-secondary"><%= link_to 'Modifier mes informations', edit_user_path(@user.id) %></button>
+  </div>
 
-  <%= link_to 'Modifier email ou mot de passe', edit_user_registration_path %><br>
-  <%= link_to 'Modifier mes informations', edit_user_path(@user.id) %>
+  <h2>Évènements créés</h2>
+  <table>
+    <tr>
+      <th>Titre</th>
+      <th>Date</th>
+      <th>Participants</th>
+      <th>Lien</th>
+    </tr>
+    <% @user.events.each do |event| %>
+      <tr>
+        <td><%= event.title %></td>
+        <td><%= event.start_date.strftime("%d/%m/%Y à %Hh%M") %></td>
+        <td class="column-center"><%= event.users.count %></td>
+        <td><button class="btn btn-secondary"><%= link_to 'Voir', event_path(event.id) %></button></td>
+      </tr>
+    <% end %>
+  </table>
 
-  <hr>
-  <h2>Mes évènements :</h2>
-  <% @user.events.each do |event| %>
-    <div class="event-element">
-      <%= event.title %>
-      <%= link_to 'Voir', event_path(event.id) %>
-    </div>
-  <% end %>
+  <h2>Évènements auxquels tu participes</h2>
+  <table>
+    <tr>
+      <th>Titre</th>
+      <th>Date</th>
+      <th>Lien</th>
+    </tr>
+    <% @user.attendances.each do |attendance| %>
+      <% event = @events.select{ |event| event.id == attendance.event_id }.reduce %>
+      <tr>
+        <td><%= event.title %></td>
+        <td><%= event.start_date.strftime("%d/%m/%Y à %Hh%M") %></td>
+        <td><button class="btn btn-secondary"><%= link_to 'Voir', event_path(event.id) %></button></td>
+      </tr>
+    <% end %>
+  </table>
 </div>
-
