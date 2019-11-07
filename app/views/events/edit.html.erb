@@ -36,6 +36,11 @@
       <%= text_field_tag 'price', @event.price, class: "form-control" %>
     </div>
 
+    <div class="form-group form-check">
+      <%= label_tag 'Photo de couverture' %>
+      <%= file_field_tag :cover %>
+    </div>
+
     <%= submit_tag "Modifier", class: "btn btn-primary" %>
     <button type="button" class="btn btn-secondary"><%= link_to 'Retour', :back %></button>
     <button type="button" class="btn btn-secondary"><a href="<%= event_path(params[:id]) %>" data-confirm="C'est ton dernier mot ?" data-method="DELETE">Supprimer</a></button>

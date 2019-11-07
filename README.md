@@ -26,10 +26,10 @@ Les différentes tables :
 <h2>Améliorations possibles</h2>
 
 * restrictions à faire
-* design
 * système de tags pour les évènements
 * pouvoir classer les évènements affichés sur index par tags
 * ...
+* design DONE
 * mettre stripe en production DONE
 
 --------

@@ -88,6 +88,13 @@ header a, header a:hover, header a:active {
 .header-right {
   display: flex;
   height: 72px;
+  align-items: center;
+}
+.header-right img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .header-element {
@@ -336,6 +343,12 @@ button:focus {
   align-items: center;
   border-bottom: 1px solid lightgray;
 }
+.head-img img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 360px;
+}
+
 .head-infos {
   grid-column-start: 3;
   grid-column-end: 4;
@@ -414,7 +427,7 @@ table {
 }
 table, tr, td, th {
   font-weight: 300;
-  padding: 15px 50px;
+  padding: 15px 30px;
 }
 table tr {
   border-top: 1px solid lightgray;

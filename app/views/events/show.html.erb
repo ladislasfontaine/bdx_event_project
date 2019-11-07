@@ -1,5 +1,11 @@
 <div class="event-main">
-  <div class="head-img">Image</div>
+  <div class="head-img">
+    <% if @event.cover.attached? %>
+      <%= image_tag @event.cover, alt: 'Couverture' %>
+    <% else %>
+      Image
+    <% end %>
+  </div>
   <div class="head-infos">
     <div class="card-date"><%= @event.start_date.strftime("%a, %b %d") %></div>
     <h2><%= @event.title %></h2>

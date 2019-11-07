@@ -21,7 +21,12 @@
         <div class="header-right">
           <button class="header-element"><%= link_to 'Créer un évènement', new_event_path, class: "nav-item nav-link" %></button>
           <% if user_signed_in? %>
-            <button class="header-element"><%= link_to 'Bonjour ' + current_user.first_name.to_s, user_path(current_user.id), class: "nav-item nav-link" %></button>
+            <button class="header-element">
+              <% if current_user.avatar.attached? %>
+                <%= image_tag current_user.avatar, alt: 'Photo de profil' %>
+              <% end %>
+              <%= link_to 'Bonjour ' + current_user.first_name.to_s, user_path(current_user.id), class: "nav-item nav-link" %>
+            </button>
             <button class="header-element"><%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "nav-item nav-link" %></button>
           <% else %>
             <button class="header-element"><%= link_to 'Se connecter', new_user_session_path, class: "nav-item nav-link" %></button>

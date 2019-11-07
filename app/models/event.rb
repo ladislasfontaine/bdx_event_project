@@ -3,6 +3,8 @@ class Event < ApplicationRecord
   has_many :attendances
   has_many :users, through: :attendances
 
+  has_one_attached :cover
+
   validates :start_date, :duration, :title, :description, :price, :location, presence: true
   validates :duration, numericality: { only_integer: true, greater_than: 0 }
   validates :title, length: { in: 5..140 }

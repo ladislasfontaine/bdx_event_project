@@ -18,8 +18,14 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(title: params[:title], location: params[:location], start_date: params[:start_date], duration: params[:duration].to_i, description: params[:description], price: params[:price].to_i, user: current_user)
-    @event.save
-    redirect_to event_path(@event.id)
+    if @event.save && params[:cover]
+      @event.cover.attach(params[:cover])
+      flash[:notice] = "Évènement créé."
+      redirect_to event_path(@event.id)
+    else
+      flash[:alert] = "Erreur. Essaye encore."
+      redirect_to new_event_path
+    end
   end
 
   def edit
@@ -27,7 +33,10 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event = Event.find(params[:id])    
+    @event = Event.find(params[:id])
+    if params[:cover] != ""
+      @event.cover.attach(params[:cover])      
+    end
     if @event.update(title: params[:title], location: params[:location], start_date: params[:start_date], duration: params[:duration].to_i, description: params[:description], price: params[:price].to_i, user: current_user)
       flash[:notice] = "Ton évènement a bien été modifié."
       redirect_to event_path(params[:id])
