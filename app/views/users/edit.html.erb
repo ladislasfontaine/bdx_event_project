@@ -1,6 +1,14 @@
 <div class="headline">Édite ton profil</div>
 
 <div>
+  <%= form_tag user_avatars_path(@user), multipart: true do %>
+    <%= label_tag 'Photo de profil' %><br>
+    <%= file_field_tag :avatar %>
+    <%= submit_tag 'Mettre à jour', class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<div>
   <%= form_tag user_path(@user.id), method: "patch", class: "form-group" do %>
 
     <div class="form-group form-check">
