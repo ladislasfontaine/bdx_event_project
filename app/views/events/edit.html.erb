@@ -1,7 +1,7 @@
 <div class="headline">Édite ton évènement</div>
 
 <div>
-  <%= form_tag event_path(params[:id]), method: "put", class: "form-group" do %>
+  <%= form_tag event_path(params[:id]), method: "put", multipart: true, class: "form-group" do %>
 
     <div class="form-group form-check">
       <%= label_tag 'Titre' %>
