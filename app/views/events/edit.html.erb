@@ -38,7 +38,7 @@
 
     <div class="form-group form-check">
       <%= label_tag 'Photo de couverture' %>
-      <%= file_field_tag :cover %>
+      <%= file_field_tag :cover, :accept => 'image/jpeg' %>
     </div>
 
     <%= submit_tag "Modifier", class: "btn btn-primary" %>
