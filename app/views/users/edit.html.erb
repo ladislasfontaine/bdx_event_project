@@ -3,7 +3,7 @@
 <div>
   <%= form_tag user_avatars_path(@user), multipart: true do %>
     <%= label_tag 'Photo de profil' %><br>
-    <%= file_field_tag :avatar, :accept => 'image/jpeg' %>
+    <%= file_field_tag :avatar %>
     <%= submit_tag 'Mettre à jour', class: "btn btn-primary" %>
   <% end %>
 </div>
