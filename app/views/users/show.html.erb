@@ -4,12 +4,14 @@
 
   <table>
     <tr>
+      <th>Photo</th>
       <th>Prénom</th>
       <th>Nom</th>
       <th>Email</th>
       <th>Description</th>
     </tr>
     <tr>
+      <td class="profile-pic"><%= image_tag 'avatar-default.png' %></td>
       <td><%= @user.first_name %></td>
       <td><%= @user.last_name %></td>
       <td><%= @user.email %></td>
