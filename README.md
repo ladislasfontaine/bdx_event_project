@@ -25,6 +25,7 @@ Les différentes tables :
 
 <h2>Améliorations possibles</h2>
 
+* ajouter paramètre admin à un user (https://roberteshleman.com/blog/2014/08/14/using-rails-namespaces-for-admin-actions/)
 * restrictions à faire
 * système de tags pour les évènements
 * pouvoir classer les évènements affichés sur index par tags

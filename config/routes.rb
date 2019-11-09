@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :events do
     resources :participations
   end
-  
+  namespace :admin do
+    root 'admin#index'
+    resources :users
+  end
   root 'events#index'
 end
