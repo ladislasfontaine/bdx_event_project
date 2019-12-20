@@ -11,7 +11,7 @@ class ParticipationsController < ApplicationController
   end
   
   def create
-    @event = Event.find(params[:event_id])  
+    @event = Event.find(params[:event_id]) 
     
     if @event.is_free?
       Attendance.create(user: current_user, event: @event)
